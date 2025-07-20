@@ -52,6 +52,13 @@ services:
     # adding the mount volume point which we create earlier
     volumes:
       - '/data/grafana-data:/var/lib/grafana'
+    environment:
+      - GF_SMTP_ENABLED=${GF_SMTP_ENABLED:-false}
+      - GF_SMTP_HOST=${GF_SMTP_HOST:-smtp.gmail.com:587}
+      - GF_SMTP_USER=${GF_SMTP_USER}
+      - GF_SMTP_PASSWORD=${GF_SMTP_PASSWORD}
+      - GF_SMTP_FROM_ADDRESS=${GF_SMTP_FROM_ADDRESS}
+      - GF_SMTP_FROM_NAME=${GF_SMTP_FROM_NAME:-Grafana}
 
   timescaledb:
     image: timescale/timescaledb-ha:pg17
