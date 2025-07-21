@@ -4,7 +4,7 @@
 sudo apt-get update
 
 # 安装必要的系统依赖
-sudo apt-get install -y build-essential npm
+sudo apt-get install -y build-essential npm python3-dev libgmp3-dev
 
 # 安装 npm 和 pm2
 sudo npm install -g pm2
